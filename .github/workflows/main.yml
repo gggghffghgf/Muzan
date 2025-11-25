@@ -24,7 +24,7 @@ jobs:
       - name: تحميل الاصدار
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+         python-version: '3.9'
 
       - name: تهيئة Git
         run: |
@@ -46,9 +46,12 @@ jobs:
           if ! ls *.session *.db 1> /dev/null 2>&1; then
             echo "❌ تحذير: ماكو ملفات بيانات (session/db) انوجدت!"
           else
-            echo "✅ الملفات الأساسية موجودة بعد الاستبدال"
-          fi
+            echo "✅ الملفات الأساسية موجودة بعد الاستبدال"       
+   fi
 
+    - name: تحديث pip و setuptools و wheel
+  run: pip install --upgrade pip setuptools wheel
+      
       - name: تحميل المتطلبات
         run: |
           pip install --upgrade pip
