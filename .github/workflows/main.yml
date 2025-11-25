@@ -47,10 +47,10 @@ jobs:
             echo "❌ تحذير: ماكو ملفات بيانات (session/db) انوجدت!"
           else
             echo "✅ الملفات الأساسية موجودة بعد الاستبدال"       
-   fi
+          fi
 
-    - name: تحديث pip و setuptools و wheel
-  run: pip install --upgrade pip setuptools wheel
+      - name: تحديث pip و setuptools و wheel
+        run: pip install --upgrade pip setuptools wheel
       
       - name: تحميل المتطلبات
         run: |
